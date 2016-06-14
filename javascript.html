@@ -1,0 +1,629 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JavaScript &mdash; Chevah Style Guide  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Chevah Style Guide  documentation" href="index.html"/>
+        <link rel="next" title="CSS, LESS and Styles" href="css.html"/>
+        <link rel="prev" title="Python" href="python.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Chevah Style Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="generic.html">Generic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="review.html">Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defects-tech-debt.html">Bugs and Tech-Debt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leave.html">Leave / Holiday</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">Release process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work.html">Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">JavaScript</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prevent-polluting-the-global-scope">Prevent polluting the global scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#defining-classes">Defining classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#css-interaction">CSS interaction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#js-related-css-class">JS related CSS class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changing-css-html-from-js">Changing CSS/HTML from JS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#test-styleguide">Test styleguide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rerefences">Rerefences</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="css.html">CSS, LESS and Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="html.html">HTML, XML and other markups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Chevah Style Guide</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>JavaScript</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/javascript.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="javascript">
+<h1><a class="toc-backref" href="#id1">JavaScript</a><a class="headerlink" href="#javascript" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#javascript" id="id1">JavaScript</a><ul>
+<li><a class="reference internal" href="#general" id="id2">General</a></li>
+<li><a class="reference internal" href="#prevent-polluting-the-global-scope" id="id3">Prevent polluting the global scope</a></li>
+<li><a class="reference internal" href="#defining-classes" id="id4">Defining classes</a></li>
+<li><a class="reference internal" href="#css-interaction" id="id5">CSS interaction</a><ul>
+<li><a class="reference internal" href="#js-related-css-class" id="id6">JS related CSS class</a></li>
+<li><a class="reference internal" href="#changing-css-html-from-js" id="id7">Changing CSS/HTML from JS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#test-styleguide" id="id8">Test styleguide</a><ul>
+<li><a class="reference internal" href="#rerefences" id="id9">Rerefences</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="general">
+<h2><a class="toc-backref" href="#id2">General</a><a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Variable declarations must start with &#8216;var&#8217;.</p>
+</li>
+<li><p class="first">Do your best to never use a semicolon.
+This means avoiding them at line breaks and avoiding multi-statement lines.
+Semi-colon at the end of the line is added only when required.</p>
+</li>
+<li><p class="first">Use 4 space indentation.</p>
+</li>
+<li><p class="first">Variable, function, method and constants name are after PEP8.
+variable_name, function_name, methodName, ClassName, CONSTANT_NAME</p>
+</li>
+<li><p class="first">Callback methods should always end with &#8216;Callback&#8217; as the
+method / function name. This is a reminder of the fact that
+the context is lost.</p>
+</li>
+<li><p class="first">Constructor functions (those that are called with <strong>new</strong>) should use
+class naming convention.</p>
+</li>
+<li><p class="first">use <code class="docutils literal"><span class="pre">===</span></code> instead of <code class="docutils literal"><span class="pre">==</span></code> for comparison. <code class="docutils literal"><span class="pre">===</span></code> doesn&#8217;t do type
+coercion.</p>
+</li>
+<li><p class="first">Only use <code class="docutils literal"><span class="pre">typeof</span></code> for checking against undefined variables:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">typeof</span> <span class="n">foo</span> <span class="o">!==</span> <span class="s1">&#39;undefined&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">For all other type checking use the custom defined typeOf() function.</p>
+</li>
+<li><p class="first">Try to avoid the usage of <code class="docutils literal"><span class="pre">instanceof</span></code> and don&#8217;t use it for native types.</p>
+</li>
+<li><p class="first">Create new arrays using the array literals <code class="docutils literal"><span class="pre">[]</span></code> notation. Don&#8217;t use
+<code class="docutils literal"><span class="pre">new</span> <span class="pre">Array()</span></code>.</p>
+</li>
+<li><p class="first">Iterate arrays using the classic <code class="docutils literal"><span class="pre">for</span></code> loop:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">......</span> <span class="mi">100000000</span><span class="p">];</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">var</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="o">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span> <span class="o">==</span> <span class="n">l</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">list</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Always define the variable used to iterate in a <code class="docutils literal"><span class="pre">for</span></code> loop.</p>
+</li>
+<li><p class="first">Don&#8217;t use <code class="docutils literal"><span class="pre">eval</span></code> and don&#8217;t pass strings to <code class="docutils literal"><span class="pre">setTimeout</span></code> and
+<code class="docutils literal"><span class="pre">setInterval</span></code>.</p>
+</li>
+<li><p class="first">Use <code class="docutils literal"><span class="pre">undefined</span></code> instead of the the traditional <code class="docutils literal"><span class="pre">null</span></code>.</p>
+</li>
+<li><p class="first">Keep braces on the same line as their corresponding statements. Never omit
+them for single-line if / else statements.</p>
+</li>
+</ul>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">something</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// code here</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// code here</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">duppy</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">something</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">foo</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Leave 2 empty lines between global function or class definitions.
+Leave 1 empty line between functions from the same class.
+Global variable can be grouped and the don&#8217;t require empty lines in between.</li>
+</ul>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">GLOBAL_DAY</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="kd">var</span> <span class="nx">GLOBAL_YEAR</span> <span class="o">=</span> <span class="mi">3</span>
+
+
+<span class="cm">/*</span>
+<span class="cm">Docstring for duppy.</span>
+<span class="cm">*/</span>
+<span class="kd">function</span> <span class="nx">duppy</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Do something here.</span>
+<span class="p">}</span>
+
+
+<span class="cm">/*</span>
+<span class="cm">Docstring for duppy_doo.</span>
+<span class="cm">*/</span>
+<span class="kd">function</span> <span class="nx">duppy_doo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Do something here.</span>
+<span class="p">}</span>
+
+
+<span class="cm">/*</span>
+<span class="cm">A simple mock for Browser service.</span>
+<span class="cm">*/</span>
+<span class="kd">function</span> <span class="nx">MockBrowser</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_cookies</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    Docstring for MockBrower.setCookies()</span>
+<span class="cm">    */</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setCookie</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Implementation here.</span>
+    <span class="p">}</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    Docstring here.</span>
+<span class="cm">    */</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">doSomethingElse</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Implementation here.</span>
+    <span class="p">}</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">_methodWihoutDocstring</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Implementation here.</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first">Avoid using leading parenthesis.</p>
+</li>
+<li><p class="first">Avoid using <code class="docutils literal"><span class="pre">delete</span></code> operator and only use it to delete explicitly
+set properties on normal objects:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="n">obj</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="p">};</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">delete</span> <span class="n">obj</span><span class="o">.</span><span class="n">x</span><span class="p">;</span>  <span class="o">//</span> <span class="n">true</span>
+<span class="n">delete</span> <span class="n">obj</span><span class="o">.</span><span class="n">y</span><span class="p">;</span>  <span class="o">//</span> <span class="n">true</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Use single quote for strings.</p>
+</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">we</span> <span class="n">use</span> <span class="s2">&quot; as quotes around attribute values, like this:</span>
+
+<span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;foo&quot;</span><span class="o">&gt;</span><span class="n">bar</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+<span class="n">In</span> <span class="n">JavaScript</span><span class="p">,</span> <span class="n">we</span> <span class="n">use</span> <span class="s1">&#39; as much as possible.</span>
+
+<span class="n">alert</span><span class="p">(</span><span class="s1">&#39;qux&#39;</span><span class="p">);</span>
+<span class="n">This</span> <span class="n">way</span><span class="p">,</span> <span class="n">we</span> <span class="n">can</span> <span class="n">use</span> <span class="n">consistent</span> <span class="n">quotes</span> <span class="n">when</span> <span class="n">writing</span> <span class="n">HTML</span> <span class="n">inside</span> <span class="n">of</span> <span class="n">JS</span><span class="p">:</span>
+
+<span class="n">alert</span><span class="p">(</span><span class="s1">&#39;&lt;a href=&quot;foo&quot;&gt;bar&lt;/a&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>REST web services should always return a valid dictionary
+and not an Array or a primitive. JSON-RPC is forced to return a dictionary
+by the protocol.</li>
+<li>Callbacks called from the GUI / DOM should be prefixed with <cite>on</cite>.
+Ex: onAuthentication (when authenticate button is pressed),
+onLogout (when logout link is pressed),
+onLoginFormSubmit (when login form is submitted)</li>
+<li>Callbacks/Errback for XHR are be prefixed with <cite>cb</cite> and <cite>eb</cite>, similar
+with Python/Twisted convention.</li>
+<li>For one line comments, leave one empty space after the comment marker.</li>
+</ul>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// Good comment line.</span>
+<span class="c1">//Bad comment line.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>For multi line comments use the following convention.</li>
+</ul>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">Short single line comment title.</span>
+<span class="cm">More details about what is here and</span>
+<span class="cm">here and here.</span>
+
+<span class="cm">Feel free to create paragraphs separation.</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Global constants will follow the CONSTANT_NAME naming convention.</li>
+<li>Global services (objects with methods) are named similar to class names.
+Most of the time they will be singletons so there will be no associated
+class.</li>
+</ul>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">Shell</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ActiveXObject</span><span class="p">(</span><span class="s2">&quot;WScript.Shell&quot;</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">do_something</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">bla</span> <span class="o">=</span> <span class="nx">Shell</span><span class="p">.</span><span class="nx">method_usage</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>TODO
+<a class="reference external" href="http://javascript.crockford.com/code.html">http://javascript.crockford.com/code.html</a> <a class="reference external" href="http://jibbering.com/faq/notes/code-guidelines/">http://jibbering.com/faq/notes/code-guidelines/</a> <a class="reference external" href="http://neil.rashbrook.org/Js.htm">http://neil.rashbrook.org/Js.htm</a></p>
+</div>
+<div class="section" id="prevent-polluting-the-global-scope">
+<h2><a class="toc-backref" href="#id3">Prevent polluting the global scope</a><a class="headerlink" href="#prevent-polluting-the-global-scope" title="Permalink to this headline">¶</a></h2>
+<p>You can use immediately invoked function expression IIFE to avoid
+injecting more variables into global scope.
+When using IIFE don&#8217;t forget to add the semicolon at the beginning.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// Path something from global scope.</span>
+<span class="p">;(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// tagsInput is kept only inside this scope.</span>
+  <span class="kd">var</span> <span class="nx">tagsInput</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;ngTagsInput&#39;</span><span class="p">)</span>
+  <span class="nx">tagsInput</span><span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="s1">&#39;tiTranscludeAppendDirective&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{}</span>
+  <span class="p">})</span>
+<span class="p">})()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="defining-classes">
+<h2><a class="toc-backref" href="#id4">Defining classes</a><a class="headerlink" href="#defining-classes" title="Permalink to this headline">¶</a></h2>
+<p>In JS there is no strict way of defining a class and instances are created
+using a function and new operator.</p>
+<p>When defining a class we use an anonymous function to allow class
+private instances and create a new class scope.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">BaseAccount</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">class_private_member</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    Constructor is here.</span>
+<span class="cm">    */</span>
+    <span class="kd">var</span> <span class="nx">cls</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span>
+    <span class="p">}</span>
+
+    <span class="nx">cls</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">class_member</span> <span class="o">=</span> <span class="mi">3</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    Base method.</span>
+<span class="cm">    */</span>
+    <span class="nx">cls</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">base_method</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span>
+    <span class="p">}</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    Some method.</span>
+<span class="cm">    */</span>
+    <span class="nx">cls</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">some_method</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">prefix</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">prefix</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">base_method</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    Another method.</span>
+<span class="cm">    */</span>
+    <span class="nx">cls</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">tuned</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">cls</span>
+<span class="p">}())</span>
+
+
+<span class="kd">var</span> <span class="nx">SpecialAccount</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">cls</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">variant</span> <span class="o">=</span> <span class="s1">&#39;light&#39;</span>
+        <span class="cm">/* Something similar to super()*/</span>
+        <span class="nx">BaseAccount</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* Something similar to inheritance. */</span>
+    <span class="nx">cls</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">BaseAccount</span><span class="p">.</span><span class="nx">prototype</span><span class="p">)</span>
+    <span class="nx">cls</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">constructor</span> <span class="o">=</span> <span class="nx">cls</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    Method extending parent.</span>
+<span class="cm">    */</span>
+    <span class="nx">cls</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">some_method</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">prefix</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">parent</span> <span class="o">=</span> <span class="nx">BaseAccount</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">some_method</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">prefix</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nx">prefix</span> <span class="o">+</span> <span class="s1">&#39;-child-&#39;</span> <span class="o">+</span> <span class="nx">parent</span>
+    <span class="p">}</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    Method overwriting parent.</span>
+<span class="cm">    */</span>
+    <span class="nx">cls</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">tuned</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">cls</span>
+<span class="p">}())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="css-interaction">
+<h2><a class="toc-backref" href="#id5">CSS interaction</a><a class="headerlink" href="#css-interaction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="js-related-css-class">
+<h3><a class="toc-backref" href="#id6">JS related CSS class</a><a class="headerlink" href="#js-related-css-class" title="Permalink to this headline">¶</a></h3>
+<p>Try to append js- to all javascript-based selectors. This is taken from
+<a class="reference external" href="http://ozmm.org/posts/slightly_obtrusive_javascript.html">slightly obtrusive javascript</a>. The idea is that you should be able to tell
+a presentational class from a functional class.</p>
+<p>There are good things and bad things about &#8220;Unobtrustive JavaScript.&#8221;
+One bad thing: it&#8217;s hard to tell what JavaScript is touching an element.</p>
+<p>Only ever use classes and ids prefix with js- when touching the DOM with
+JavaScript.</p>
+<p>For example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s2">&quot;#prices&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;button js-open-tab&quot;</span><span class="o">&gt;</span><span class="n">Prices</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Now we know to look for any JavaScript touching .js-open-tab, which should
+only be a simple search away.</p>
+<p>And hey, now JavaScript and CSS won&#8217;t share selectors. Since we&#8217;re separating
+our content and presentation, we might as well separate our behaviour all the
+way too.</p>
+</div>
+<div class="section" id="changing-css-html-from-js">
+<h3><a class="toc-backref" href="#id7">Changing CSS/HTML from JS</a><a class="headerlink" href="#changing-css-html-from-js" title="Permalink to this headline">¶</a></h3>
+<p>Don&#8217;t modify the associated CSS properties, but rather modify the CSS class:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>GOOD: $(&#39;#element_id&#39;).addClass(&#39;highlight&#39;);
+BAD : $(&#39;#element_id&#39;).css(&#39;font-weight&#39;: &#39;bold&#39;);
+</pre></div>
+</div>
+<p>Same story as with CSS, don&#8217;t modify HTML tag attributes,
+but rather try to change the CSS class:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>GOOD: $(&#39;#element_id&#39;).addClass(&#39;sprite red_dot&#39;);
+BAD : $(&#39;#element_id&#39;).attr(&#39;src&#39;: &#39;some/red_dot.png&#39;);
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="test-styleguide">
+<h2><a class="toc-backref" href="#id8">Test styleguide</a><a class="headerlink" href="#test-styleguide" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>We use <code class="docutils literal"><span class="pre">expect</span></code> style testing.</li>
+<li>Leave 2 emtpy lines before each <code class="docutils literal"><span class="pre">suite</span></code> and one empty line before each
+<code class="docutils literal"><span class="pre">test</span></code></li>
+</ul>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm">Tests for login controller.</span>
+<span class="cm">*/</span>
+
+
+<span class="nx">suite</span><span class="p">(</span><span class="s1">&#39;LoginCtrl&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// Shared variables.</span>
+    <span class="kd">var</span> <span class="nx">scope</span>
+    <span class="kd">var</span> <span class="nx">ctrl</span>
+
+    <span class="nx">setup</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// Initialize first.</span>
+    <span class="p">})</span>
+
+    <span class="nx">teardown</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// Clean second.</span>
+    <span class="p">})</span>
+
+    <span class="nx">test</span><span class="p">(</span>
+    <span class="s1">&#39;Initializes with no errors and blank values&#39;</span> <span class="o">+</span>
+    <span class="s1">&#39;long line are wrapped&#39;</span><span class="p">,</span>
+    <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">something</span> <span class="o">=</span> <span class="nx">Something</span><span class="p">()</span>
+
+        <span class="nx">something</span><span class="p">.</span><span class="nx">doSomething</span><span class="p">()</span>
+
+        <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">something</span><span class="p">.</span><span class="nx">username</span><span class="p">)</span>
+    <span class="p">})</span>
+
+
+    <span class="nx">suite</span><span class="p">(</span><span class="s1">&#39;critical_error attribute&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+
+        <span class="nx">test</span><span class="p">(</span>
+        <span class="s1">&#39;When set, hides the form and sets the error message.&#39;</span><span class="p">,</span>
+        <span class="kd">function</span><span class="p">(){</span>
+            <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">manu</span><span class="p">.</span><span class="nx">makeUniqueString</span><span class="p">()</span>
+
+            <span class="nx">scope</span><span class="p">.</span><span class="nx">critical_error</span> <span class="o">=</span> <span class="nx">message</span>
+            <span class="nx">scope</span><span class="p">.</span><span class="nx">$digest</span><span class="p">()</span>
+
+            <span class="nx">assert</span><span class="p">.</span><span class="nx">isFalse</span><span class="p">(</span><span class="nx">scope</span><span class="p">.</span><span class="nx">show_form</span><span class="p">)</span>
+            <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">scope</span><span class="p">.</span><span class="nx">alert</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span>
+        <span class="p">})</span>
+    <span class="p">})</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<div class="section" id="rerefences">
+<h3><a class="toc-backref" href="#id9">Rerefences</a><a class="headerlink" href="#rerefences" title="Permalink to this headline">¶</a></h3>
+<p>Here are the pages I used to create this page.</p>
+<ul class="simple">
+<li><a class="reference external" href="http://toranbillups.com/blog/archive/2013/05/15/Basic-javascript-inheritance-and-polymorphism/">http://toranbillups.com/blog/archive/2013/05/15/Basic-javascript-inheritance-and-polymorphism/</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="css.html" class="btn btn-neutral float-right" title="CSS, LESS and Styles" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="python.html" class="btn btn-neutral" title="Python" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Chevah Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

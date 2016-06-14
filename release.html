@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Release process &mdash; Chevah Style Guide  documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Chevah Style Guide  documentation" href="index.html"/>
+        <link rel="next" title="Work" href="work.html"/>
+        <link rel="prev" title="Library" href="library.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Chevah Style Guide
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="generic.html">Generic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="review.html">Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defects-tech-debt.html">Bugs and Tech-Debt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="leave.html">Leave / Holiday</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library.html">Library</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Release process</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general">General</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-review-process">Release Review Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#release-notes">Release Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sample-release-notes">Sample release notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="work.html">Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javascript.html">JavaScript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="css.html">CSS, LESS and Styles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="html.html">HTML, XML and other markups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bash.html">Bash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Chevah Style Guide</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Release process</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/release.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="release-process">
+<h1><a class="toc-backref" href="#id1">Release process</a><a class="headerlink" href="#release-process" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#release-process" id="id1">Release process</a><ul>
+<li><a class="reference internal" href="#general" id="id2">General</a></li>
+<li><a class="reference internal" href="#release-review-process" id="id3">Release Review Process</a></li>
+<li><a class="reference internal" href="#release-notes" id="id4">Release Notes</a><ul>
+<li><a class="reference internal" href="#sample-release-notes" id="id5">Sample release notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="general">
+<h2><a class="toc-backref" href="#id2">General</a><a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<p>This page describes the release process and steps to be followed during
+development to simplify the release or a final product or library.</p>
+<p>Releasing a product usually consists of publishing the following:</p>
+<ul class="simple">
+<li>Binary or source archives.</li>
+<li>Documentation, which includes Release Notes, Known Issues and Upgrade Steps.</li>
+<li>Public announcement. Notification email or website news/blog article.</li>
+</ul>
+</div>
+<div class="section" id="release-review-process">
+<h2><a class="toc-backref" href="#id3">Release Review Process</a><a class="headerlink" href="#release-review-process" title="Permalink to this headline">¶</a></h2>
+<p>As a means to allow all team members that are involved in
+coding, testing and supporting the product to keep up with the changes,
+they must be part of the reviewers of the release branch/PR.</p>
+<p>Being part of the release review will help to acknowledge the changes and to
+confirm that you&#8217;ve okayed the changes.</p>
+<p>The release review request should also include the text used to announce the
+new release on the website.</p>
+</div>
+<div class="section" id="release-notes">
+<h2><a class="toc-backref" href="#id4">Release Notes</a><a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h2>
+<p>Release notes explain what changed with this version. <strong>Period</strong>.
+Release notes are <strong>not</strong> installation, upgrade or configuration.</p>
+<p>Each time a branch fixes a bug, adds a new feature or makes any changes
+which are visible to end users a new entry is added inside the release notes
+file. A release note entry is a summary for one change.</p>
+<p>We keep release notes for all versions in a single file so that users can
+easily read all changes starting from their version up to latest or a
+specific version.</p>
+<p>Release notes are grouped in one of the following categories. The category
+may be omitted if no changes were added for it. Here are some categories:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Major</span> <span class="n">changes</span> <span class="p">(</span><span class="n">only</span> <span class="k">for</span> <span class="n">major</span> <span class="n">releases</span><span class="p">)</span>
+<span class="o">*</span> <span class="n">New</span> <span class="n">features</span>
+<span class="o">*</span> <span class="n">Bug</span> <span class="n">fixes</span> <span class="p">(</span><span class="n">this</span> <span class="n">will</span> <span class="n">be</span> <span class="n">the</span> <span class="n">only</span> <span class="n">section</span> <span class="k">for</span> <span class="n">bugfix</span> <span class="n">releases</span><span class="p">)</span>
+<span class="o">*</span> <span class="n">Deprecation</span> <span class="ow">and</span> <span class="n">Removals</span>
+<span class="o">*</span> <span class="n">Other</span> <span class="n">changes</span><span class="o">.</span> <span class="n">Documentation</span> <span class="n">changes</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>A marker/tag is added at the end of the sentence to point the ticket ID
+associated with this change. Ticket ID marker is not mandatory for new features.</p>
+<p>It can be followed by a list of tags to help users understand / filter the
+scope of the change. Here are some examples:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>* ``[https]`` - for changes affecting only a sub-system.
+* ``[aix]`` - for changes affecting only AIX systems.
+* ``[windows]`` - for changes affecting only Windows system.
+</pre></div>
+</div>
+<p>Remember your audience/user/clients and write for that audience.</p>
+<p>Don&#8217;t explain all details of the change. When more details are required
+use a link to documentation.</p>
+<p>All entries should be complete sentences or phrases, ending with a
+punctuation mark.</p>
+<p>Use present tense as opposed to past tense. The text should state what the
+change <strong>does</strong> and not what it <strong>did</strong>.
+&#8220;Product no longer falls over X.&#8221; as opposed to &#8220;Product fell over X.&#8221;.</p>
+<p>Write text in <strong>resolution</strong> form, describe what impact the change will have
+on users. What will the users notice?</p>
+<p>If a single sentence isn&#8217;t clear enough to understand, explaining the
+background of the change can be helpful, by adding in
+<cite>Previously, X used to do Y.</cite> or <cite>Previously, X used to do Y. Now Z.</cite>.</p>
+<p>Don&#8217;t add low-level, internal details about product logic. Focus on how
+the change affects / is perceived by the user.</p>
+<p>Here are some examples:</p>
+<ul class="simple">
+<li>Support was added for doing / integrating with X.</li>
+<li>Users now can do X.</li>
+<li>It is no longer possible to do Y.</li>
+<li>The text on the ABC form is now Z.</li>
+<li>Reworded text from X to be gender neutral.</li>
+<li>Doing X on a session in state Y no longer gives the XYZ error.</li>
+<li>Fix the XZY error generated when client was doing X on a session in Y state.</li>
+<li>Previously, users were unable to upload files to a folder if they
+had write permissions.</li>
+</ul>
+<div class="section" id="sample-release-notes">
+<h3><a class="toc-backref" href="#id5">Sample release notes</a><a class="headerlink" href="#sample-release-notes" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Release</span> <span class="n">Notes</span>
+<span class="o">=============</span>
+
+<span class="n">This</span> <span class="ow">is</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">changes</span> <span class="k">for</span> <span class="n">PRODUCT</span> <span class="n">NAME</span> <span class="n">releases</span><span class="o">.</span>
+
+
+<span class="n">Version</span> <span class="mf">2.1</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">released</span> <span class="mi">24</span><span class="o">/</span><span class="mi">02</span><span class="o">/</span><span class="mi">2014</span>
+<span class="o">----------------------------------</span>
+
+
+<span class="n">New</span> <span class="n">features</span>
+<span class="o">^^^^^^^^^^^^</span>
+
+<span class="o">*</span> <span class="n">Support</span> <span class="n">was</span> <span class="n">added</span> <span class="n">to</span> <span class="n">transfer</span> <span class="n">files</span> <span class="n">using</span> <span class="n">SCP</span> <span class="n">over</span> <span class="n">SSH</span><span class="o">.</span>
+  <span class="n">Read</span> <span class="n">more</span><span class="o">...</span> <span class="p">[</span><span class="n">scp</span><span class="p">]</span>
+<span class="o">*</span> <span class="n">SFTP</span> <span class="n">protocol</span> <span class="n">now</span> <span class="n">support</span> <span class="n">reading</span> <span class="ow">and</span> <span class="n">creating</span> <span class="n">symbolic</span> <span class="n">links</span> <span class="n">on</span>
+  <span class="n">Windows</span><span class="o">.</span> <span class="p">[</span><span class="n">sftp</span><span class="p">][</span><span class="n">windows</span><span class="p">]</span>
+
+
+<span class="n">Defect</span> <span class="n">fixes</span>
+<span class="o">^^^^^^^^^^^^</span>
+
+<span class="o">*</span> <span class="n">Fix</span> <span class="n">an</span> <span class="n">internal</span> <span class="n">server</span> <span class="n">error</span> <span class="n">when</span> <span class="n">SSH</span> <span class="n">client</span> <span class="n">requests</span>
+  <span class="n">to</span> <span class="n">execute</span> <span class="n">a</span> <span class="n">command</span><span class="p">,</span> <span class="n">a</span> <span class="n">shell</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">pseudo</span><span class="o">-</span><span class="n">terminal</span><span class="o">.</span> <span class="p">[</span><span class="c1">#176][sftp][scp]</span>
+
+
+<span class="n">Deprecations</span> <span class="ow">and</span> <span class="n">removals</span>
+<span class="o">^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+
+<span class="o">*</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">longer</span> <span class="n">possible</span> <span class="n">to</span> <span class="n">do</span> <span class="n">X</span><span class="o">.</span> <span class="p">[</span><span class="c1">#1359][unix]</span>
+<span class="o">*</span> <span class="n">Windows</span> <span class="n">XP</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">longer</span> <span class="n">supported</span><span class="o">.</span> <span class="p">[</span><span class="c1">#2345]</span>
+<span class="o">*</span> <span class="n">Configuration</span> <span class="n">option</span> <span class="n">X</span><span class="p">,</span> <span class="n">deprecated</span> <span class="n">since</span> <span class="n">Product</span> <span class="n">version</span> <span class="mf">12.1</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="ow">is</span> <span class="n">now</span>
+  <span class="n">removed</span><span class="o">.</span> <span class="p">[</span><span class="c1">#1366]</span>
+
+
+<span class="n">Other</span> <span class="n">changes</span>
+<span class="o">^^^^^^^^^^^^^</span>
+
+<span class="o">*</span> <span class="n">The</span> <span class="n">howto</span> <span class="n">document</span> <span class="n">page</span> <span class="n">of</span> <span class="n">X</span> <span class="n">now</span> <span class="n">has</span> <span class="n">documentation</span> <span class="n">about</span> <span class="n">doing</span> <span class="n">Y</span><span class="o">.</span> <span class="p">[</span><span class="c1">#2452]</span>
+
+
+
+<span class="n">Version</span> <span class="mf">2.0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="n">released</span> <span class="mi">20</span><span class="o">/</span><span class="mi">02</span><span class="o">/</span><span class="mi">2014</span>
+<span class="o">----------------------------------</span>
+
+
+<span class="n">Major</span> <span class="n">changes</span>
+<span class="o">^^^^^^^^^^^^^</span>
+
+<span class="o">*</span> <span class="n">All</span> <span class="n">log</span> <span class="n">handlers</span> <span class="n">were</span> <span class="n">converted</span> <span class="n">to</span> <span class="n">event</span> <span class="n">handlers</span><span class="o">.</span>
+  <span class="n">This</span> <span class="n">allows</span> <span class="n">an</span> <span class="n">unified</span> <span class="n">method</span> <span class="k">for</span> <span class="n">interacting</span> <span class="n">the</span> <span class="n">the</span> <span class="n">audit</span> <span class="n">events</span>
+  <span class="n">produced</span> <span class="n">by</span> <span class="n">SFTPPlus</span><span class="o">.</span>
+<span class="o">*</span> <span class="n">All</span> <span class="n">authentication</span> <span class="n">methods</span> <span class="n">are</span> <span class="n">now</span> <span class="n">explicitly</span> <span class="n">defined</span> <span class="ow">and</span> <span class="n">ordered</span><span class="o">.</span>
+  <span class="n">You</span> <span class="n">can</span> <span class="n">now</span> <span class="n">choose</span> <span class="n">the</span> <span class="n">order</span> <span class="ow">in</span> <span class="n">which</span> <span class="n">different</span> <span class="n">authentication</span> <span class="n">methods</span>
+  <span class="n">are</span> <span class="n">used</span><span class="o">.</span>
+
+
+<span class="n">New</span> <span class="n">features</span>
+<span class="o">^^^^^^^^^^^^</span>
+
+<span class="o">*</span> <span class="n">Support</span> <span class="n">was</span> <span class="n">added</span> <span class="n">to</span> <span class="n">transfer</span> <span class="n">files</span> <span class="n">using</span> <span class="n">SCP</span> <span class="n">over</span> <span class="n">SSH</span><span class="o">.</span>
+  <span class="n">Read</span> <span class="n">more</span><span class="o">...</span> <span class="p">[</span><span class="n">scp</span><span class="p">]</span>
+
+
+<span class="n">Defect</span> <span class="n">fixes</span>
+<span class="o">^^^^^^^^^^^^</span>
+
+<span class="o">*</span> <span class="n">Fix</span> <span class="n">an</span> <span class="n">internal</span> <span class="n">server</span> <span class="n">error</span> <span class="n">when</span> <span class="n">SSH</span> <span class="n">client</span> <span class="n">requests</span>
+  <span class="n">to</span> <span class="n">execute</span> <span class="n">a</span> <span class="n">command</span><span class="p">,</span> <span class="n">a</span> <span class="n">shell</span> <span class="ow">or</span> <span class="n">a</span> <span class="n">pseudo</span><span class="o">-</span><span class="n">terminal</span><span class="o">.</span> <span class="p">[</span><span class="c1">#176][sftp][scp]</span>
+
+
+<span class="n">Deprecations</span> <span class="ow">and</span> <span class="n">removals</span>
+<span class="o">^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+
+<span class="o">*</span> <span class="n">It</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">longer</span> <span class="n">possible</span> <span class="n">to</span> <span class="n">do</span> <span class="n">X</span><span class="o">.</span> <span class="p">[</span><span class="c1">#1359][unix]</span>
+<span class="o">*</span> <span class="n">Windows</span> <span class="n">XP</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">longer</span> <span class="n">supported</span><span class="o">.</span> <span class="p">[</span><span class="c1">#2345]</span>
+<span class="o">*</span> <span class="n">Configuration</span> <span class="n">option</span> <span class="n">X</span><span class="p">,</span> <span class="n">deprecated</span> <span class="n">since</span> <span class="n">Product</span> <span class="n">version</span> <span class="mf">12.1</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="ow">is</span> <span class="n">now</span>
+  <span class="n">removed</span><span class="o">.</span> <span class="p">[</span><span class="c1">#1366]</span>
+
+
+<span class="n">Version</span> <span class="mf">1.1</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="n">released</span> <span class="mi">14</span><span class="o">/</span><span class="mi">02</span><span class="o">/</span><span class="mi">2013</span>
+<span class="o">----------------------------------</span>
+
+
+<span class="n">Defect</span> <span class="n">fixes</span>
+<span class="o">^^^^^^^^^^^^</span>
+
+<span class="o">*</span> <span class="n">Fix</span> <span class="n">an</span> <span class="n">internal</span> <span class="n">server</span> <span class="n">error</span> <span class="n">when</span> <span class="n">FTP</span> <span class="n">client</span> <span class="n">requests</span>
+  <span class="n">an</span> <span class="n">unknown</span> <span class="n">command</span><span class="o">.</span> <span class="p">[</span><span class="c1">#160][ftp][ftps]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="work.html" class="btn btn-neutral float-right" title="Work" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="library.html" class="btn btn-neutral" title="Library" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Chevah Team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
